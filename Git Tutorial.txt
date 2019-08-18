@@ -1,0 +1,517 @@
+CONCEITOS GIT
+SISTEMA DE CONTROLE DE VERSÔES 
+controle de versôes do còdigo melhorando o fluxo de alteraçoes atravès de um SERVIDOR ESPECÍFICO.
+
+CONTROLE DE VERSÃO ELE OBRIGA QUE A PESSOA BAIXE O QUE FOI ALTERADO ANTES DE REALIZAR AS SUAS ALTERAÇÕES.
+
+PERMITE TER UMA COPIA NA SUA MÁQUINA E APÓS COMANDOS SINCRONIZE COM UM REPOSITORIO ON LINE QUE RECEBERÁ SUAS ALTERAÇÕES.
+
+O Git permite que a gente armazene as modificações feitas em cada arquivo em um servidor próprio para isso. Toda a gestão de alterações é feita pelo Git e nós só precisamos nos preocupar em criar código que funciona, e não em quem alterou o que antes. Cada alteração que você faz fica gravada em um histórico, podendo ser visualizada e restaurada a qualquer instante.
+
+GIT bASH, PERMITE COMANDOS SIMILARES AO DO LINUX, SERIA O PROMPT DE COMANDO DO gIT.
+
+CAMANDOS VERSÂO
+git --version
+
+ABRINDO UMA PASTA NO DESKTOP COM O GIT - NECESSÀRIO PARA CONTROLAR A MINHA PASTA VIA GIT - USANDO UM INIT
+cd Desktop/AluraGit
+
+INICIALIZANDO O CONTROLE DA PASTA 
+DENTRO DA PASTA DÊ UM :
+GIT INIT
+
+Criará uma pasta dentro do nosso repositorio, onde ele vai salvar e informar todas as alterações. - Ele insere uma marcação após a linha - (Master)
+
+Para visualizar se ele foi realizado realmente uso o Git Status
+Neste ele exibirá todos os arquivos que ainda não foram realizados.
+
+O git init inicializa um repositório no diretório em que o comando for executado. A partir deste comando, o Git poderá gerenciar as modificações realizadas nos arquivos.
+
+O que são (e para que servem) sistemas de controle de versões e como eles podem ajudar o nosso fluxo de desenvolvimento
+Nos ajudam a manter um histórico de alterações;
+Nos ajudam a ter controle sobre cada alteração no código;
+Nos ajudam para que uma alteração de determinada pessoa não influencie na alteração realizada por outra;
+Etc.
+
+O que é o Git e como instalá-lo
+Baixar do site: https://git-scm.com/download/win
+fazer o download da versão mais recebte.
+
+Que, com o comando git init, nós conseguimos criar um repositório Git;
+Este comando faz com que o Git passe a enxergar nosso repositório, ou seja inicializa o Git dentro daquela pasta criando uma pasta .git.
+
+Como analisar o estado do nosso repositório através do comando 
+git status.
+Git Status - ele nos informa em que etapa estamos do nosso Git e se houve commit, além de todos os arquivos adicionados.
+
+Adicionando Arquivos
+$ git add index.html
+$ git add . - Desta forma ele reconhece todos os arquivos dentro da minha pasta.
+
+Para Orientar ao git para que pare de monitorar um arquivo, usamos o comando
+git rm --cached nomeArquivo.html
+
+Devemos Configurar o usuario e email do responsavel pelo commit
+através do comando.
+email: 
+git config --global user.email "you@example.com"
+Usuario:  
+git config --global user.name "Your Name"
+
+Após configurado o usuario e senha, podemos executar nosso comando para salvar.
+
+Commit - precisa ter as modifgcações e a mensagem para ser executado. Uma vez que já adicionei todos os meus arquivos faço o commmit. A mensagem deve descrever o que foi mudado.
+$ git commit -m "mensagem"
+
+root-commit - Primeiro Commit executado. Ele nos mostra linha e tamanho.
+
+Para limparmos  terminal, usamos o comando:
+clear
+
+Modificações
+- Quando há modificações no arquivo e não foram as feitas por mim, necessito addicionar novamente o arquivo.
+git add index.html
+
+Após adicionar, podemos fazer novamente o Commit:
+ git commit -m "Mensagem corrigida na palavra continua!"
+
+Verificando o histórico do meu git
+Usamos um comando chamado:
+git log
+
+Para limitar o numero de linhas, usamos:
+git log -n (quantidade)
+
+Este exibira um numeroHash do nosso commit 
+HEAD - Onde estamos
+Branch - chamado master
+Autor
+Data e Hora de cada commit efetuado.
+
+
+Git Config --local - altera somente propriedades deste projeto
+Git Config --global - altera as propriedades do computador, ou seja para todos.
+
+Exemplo:
+git config --local user.name "nome do usuario" 
+
+Assim todos os commits executados neste repositório serão atribuídos à pessoa com nome Nome da pessoa. Para mais detalhes e outras configurações possíveis (até algumas mais avançadas), você pode conferir este link: https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration.
+
+Para visualizar estas configurações usamos: 
+
+ git config user.name
+ git config user.mail
+ 
+ Visualizando o que foi feito em meu projeto.
+ 
+ git log //forma de exibir irformações gerais;
+ git log --oneline // forma de exibir em apenas uma linha
+ 
+ git log -p //detalhada, incluindo as alterações. 
+ mostrando o antes e o depois
+Exemplo:
+- <li>Integração Continua</li>
++  <li>Integração Continúa</li>
+
+Exibindo só o Hash
+git log --pretty="format:%H"
+
+Hash + mensagem
+git log --pretty="format:%h %s"
+
+Hash + mensagem + email
+git log --pretty="format:%h %s %ae"
+ 
+COMANDOS POSSÍVEIS PARA O LOG.
+https://devhints.io/git-log. 
+ 
+ 
+// DEFININDO ARQUIVOS QUE O GIT IRÁ IGNORÁ-LOS.
+Para isso devemos criar um arquivo .gitignore
+
+neste arquiuvo, basta colocarmos todos os arquivos que queremos que ele não controle
+ex: 
+ide-config
+ide/  --> Desta forma ele ignora a pasta 
+
+TEMOS QUE NOS ATENTAR - DE QUANDO TEMOS QUE COMITTAR UM CÒDIGO
+
+- Isso é válido para quando implementamos funcionalidades, corrigimos bugs, finais de expediente e etc. 
+
+Devemos gerar um commit sempre que a nossa base de código está em um estado do qual gostaríamos de nos lembrar. Nunca devemos ter commits de códigos que não funcionam, mas também não é interessante deixar para commitar apenas no final de uma feature.
+Para que no final, um conjunto de commits formem o sistema e não um único commit.
+
+OBSERVAÇÔES
+Que um commit é a forma de salvar um estado ou versão do nosso código;
+Como adicionar arquivos para serem commitados com git add;
+Como commitar arquivos, utilizando o comando git commit;
+Como verificar o histórico de commits, através do git log e algumas de suas opções:
+git log --oneline
+git log -p
+git log --pretty="parametros de formatação"
+Como fazer o Git não monitorar arquivos, através do .gitignore
+Que não devemos realizar commit, ou seja, salvar um estado, da nossa aplicação não funcionando.
+
+
+TRABALHANDO EM EQUIPE COM GIT
+
+TER UM SERVIDOR PARA ENVIAR NOSSAS ALTERAÇÔES.
+
+Montamos um cenário onde temos uma segunda pasta, simulando um novo servidor, esta pasta fica um nivel acima de nossa pasta Git
+
+Usamos 
+mkdir servidor - no nivel da pasta
+
+acessar a pasta.
+cd servidor
+
+após a criação, iniciamos o git dentro desta pasta
+git init --bare 
+(parametro que indica que o repositorio é puro, ou seja não permite alterações direta e permite compartilhar com outros usuarios)
+
+Com este comando nós criamos um repositório que não terá a working tree, ou seja, não conterá uma cópia dos nossos arquivos. Como o repositório servirá apenas como servidor, para que outros membros da equipe sincronizem seus trabalhos, poupamos espaço de armazenamento desta forma.
+
+pegamos o caminho que foi criado e voltamos para o nosso git inicial.
+
+para que nosso ambiente consiga enxergar o servidor, temos que adicionar ele aos servidores remotos.
+Sendo assim usamos o caminho e o comando:
+
+git remote add nome-repositorio caminho/para/o/repositorio
+git remote add nomeServidor C:\Users\Diego\Desktop\GIT\servidor
+
+Obs: este caminho, aceita qualquer coisa, seja ele um ip, uma pasta, um servidor da rede. 
+
+usamos o comando git remote para conhecer todos os servidores adicionados.
+git remote
+
+para conferir o endereço usamos o:
+git remote -v
+
+Observações
+fetch - busca dados deste caminho
+push - envia dados para este caminho.
+
+Simulando um outro usuario.
+Criamos uma pasta 
+Mkdir nome
+
+copiamos a pasta do servidor atraves do comando:
+git clone endereço nome - Obs as barras se invertem
+$ git clone /C/Users/Diego/Desktop/GIT/servidor/ projeto
+
+Obs deve ser feito dentro de um local onde já adicionei o meu servidor remoto.
+Para enviar um arquivo ao servidor remoto usamos o comando
+git push nomeServidor master - Envia os dados ao usuario
+
+Desta forma, nós enviamos as alterações em nosso branch master (falaremos mais sobre branches já já) para o repositório remoto. Basta substituir [repositorio] pelo nome que demos ao repositório ao adicioná-lo. Já para trazer os dados que estiverem no repositório remoto, podemos utilizar o git pull [repositorio] master.
+
+PASTA USUARIO ANA
+
+Quando usamos o Git Clone, ele carrega nosso servidor com o nome de origin, para renomearmos este usamos o comando:
+git remote rename origin servidorLocal
+
+Para recebermos os dados de nosso servidor, usamos o comando:
+comando - servidor - brench
+$ git pull servidorLocal master
+
+Validando sincronia.
+Alteramos algo no projeto
+
+git status
+git add index.html
+git commit -m "alteração no nome do curso"
+git push servidorLocal master
+
+No outro usuario validamos - Recebermos as alterações.
+git pull servidorLocal master
+git log --oneline
+git log -p (ver a modificação realizada)
+
+Sendo assim já conseguimos trabalhar em Equipe
+
+Como trabalhar com o GITHUB
+Logamos no GitHub, no canto superior direito vamos no +
+adicionamos um repositorio.
+
+Ele nos permite criar um novo, ou apenas exportar o existente.
+
+para isso, pegamos seu caminho passado através dos comandos nos box do GitHub
+
+Exportando um servidor já criado.
+
+NO GITHUB criamos um repositorio com nome de alura-git
+ git remote add GitHub-git https://github.com/diegomaxdev/alura-git.git
+git remote - listar o que foi adicionados
+
+DANDO UM PUSH EM NOSSO SERVIDOR 
+Parametro u : significa que por padrão vc não precisa mais digitar o local e o master, apenas o git push.
+git push -u GitHub-git master
+
+ETAPAS PARA SINCRONIZAR UM PROJETO
+
+No terminal (ou Git Bash, no Windows) navegue até a pasta recém criada;
+Execute o comando git clone {caminho} projeto. Substitua {caminho} pelo caminho completo da pasta que criamos no primeiro passo;
+Observe que o repositório clonado está vazio;
+Navegue até a pasta onde se encontra o seu projeto original;
+Execute o comando git push local master para enviar as suas modificações para o seu servidor;
+Navegue até a pasta criada no passo 6;
+Execute o comando git pull local master para baixar as modificações;
+Abra o seu navegador e acesse http://github.com/;
+Crie uma conta;
+Crie um novo repositório, clicando no símbolo de adição no canto superior direito;
+No terminal (ou Git Bash, no Windows) adicione, ao seu projeto inicial, o repositório remoto recém criado (os comandos são mostrados pelo próprio GitHub);
+Execute git push origin master para enviar as suas alterações para o repositório no GitHub.
+
+BRANCHES - Ramificações do trabalho, ou seja, identifico as partes onde estou alterando.
+
+para isso crio uma nova Branch atraves do comando.
+git branch nome
+
+para listar basta usar o comando:
+git branch
+
+após criado, devemos acessá-lo através do comando:
+git checkout nome
+
+Podemos fazer ambos em um mesmo comando usando:
+git checkout -b nome
+
+Com isso ele criará e já vai posicionar na nova branch.
+
+FERRAMENTA PARA TESTE DO GIT
+https://git-school.github.io/visualizing-git/
+
+Branches ("ramos") são utilizados para desenvolver funcionalidades isoladas umas das outras. A branch master é a branch "padrão" quando você cria um repositório.
+
+É interessante separar o desenvolvimento de funcionalidades em branches diferentes, para que as mudanças no código para uma não influencie no funcionamento de outra.
+
+Quando temos duas linhas de desenvolvimento com branch diferentes
+
+PASSO A PASSO
+Usamos um commit - onde comitamos na nossa branche.
+
+ao terminar a edição, temos que voltar para a nossa branche master e usamos o comando para unir
+
+git merge nomeBrancheEditada.
+
+Temos que subir nossas alterações
+git push nomeServidor master (nome branche)
+
+no outro computador recebemos as alterações através do comando:
+git pull nomeServidor nomeBranche
+
+Resumindo, criamos uma branche, darei comit nestas e após todas as alterações vou carregar no master.
+
+Podemos fazer uma transição entre branches, ou seja caso dê algum problema eu volto em master e efetuo um commit para corrigir meus bugs.
+
+Portanto usaremos
+git checkout master e git merge titulo
+
+Desta forma colocaremos o HEAD na branch master, ou seja, faremos com que o nosso código esteja no estado que o deixamos com o último commit na master. Depois, uniremos o trabalho da branch titulo com a branch atual (master).
+
+Ao pressionar git log -p ele exibirá todas as alterações efetuadas, para sair deste basta pressionarmos a letra
+
+Tecle Q para sair do Git log.
+
+Atualizando Branches
+
+Criamos uma branche
+git checkout -b titulos
+
+Realizo todos os commits necessários e agora preciso unir todos os commits com o meu master, para isso volto no meu master e uso o comando:
+
+git rebase titulos (nome da minha Branch)
+
+Sendo assim, com o rebase, consigo trazer todas os commits que foram feitos em outros branches para a minha branche principal - mantendo as ordens de alteração.
+
+Observações - Temos que sempre manter nosso repositório atualizado, sendo assim caso não consiga fazer o push, temos que observar se não foi alterado e exige um pull antes.
+
+Com isso, evitamos os commits de merge. Há uma longa discussão sobre o que é "melhor": rebase ou merge. Estude, pesquise, e tire suas próprias conclusões. Aqui tem um artigo (de milhares outros) que cita o assunto: https://medium.com/datadriveninvestor/git-rebase-vs-merge-cc5199edd77c.
+
+Que uma branch (ou ramo) é uma linha de commits separada, e que pode ser utilizada para desenvolver funcionalidades independentes;
+Que com branches separados, podemos evitar que o código de uma funcionalidade interfira em outra;
+Como trazer o trabalho realizado em uma branch para outra branch, como por exemplo, o master, através do comando git merge;
+Que o git merge gera um novo commit, informando que houve uma mescla entre duas branches;
+Como trazer os commits de uma branch para outra, com o git rebase
+Que o git rebase não gera um commit de merge, simplificando o nosso log;
+
+REBASE - SEM COMMIT
+MERGE - COM COMMIT
+
+GUIA PARA O GIT
+https://gist.github.com/leocomelli/2545add34e4fec21ec16
+
+GIT CHECKOUT PERMITE TRANSITAR EM ESTADOS DO MEU ARQUIVO, PARA DESFAZER ALGO, USAMOS O COMANDO - SIMULA O CTRL Z
+
+//AINDA NÂO FOI ADICIONADO
+git checkout -- index.html
+
+//ALGO JA ADICIONADO
+git reset HEAD index.html
+após remover podemos voltar
+git checkout -- index.html
+
+DESFAZER UM ARQUIVO APOS O COMMIT
+Git Log e pegar nosso Hash
+git revert(Copiar o Hash do Log)
+
+Este comando vai gerar um novo commit para esta alteração, ou seja no log existira um anulando o outro.
+
+Com o git checkout nós desfazemos uma alteração que ainda não foi adicionada ao index ou stage, ou seja, antes do git add. Depois de adicionar com git add, para desfazer uma alteração, precisamos tirá-la deste estado, com git reset. Agora, se já realizamos o commit, o comando git revert pode nos salvar.
+
+GUARDANDO UM PEDAÇo DA ALTERAÇÂO PARA DEPOIS
+
+git stash - Salva nosso ponto atual e volta ao padrão antes da mudança
+
+git stash list (todos os pontos temporários salvos)
+
+git stash apply - numero do meu stash
+aplica as mudanças salvas naquela posição
+
+git stash pop - Faz as alterações anteriores e já remove da lista de stash
+
+Quando precisamos pausar o desenvolvimento de alguma funcionalidade, ou correção, antes de finalizar, talvez não seja interessante realizar um commit, pois o nosso código pode não estar funcionando ainda. Nesse caso é interessante salvar o trabalho para podermos voltar a ele depois.
+
+VOLTANDO NO TEMPO EM NOSSO PROJETO
+
+O Git reconhece pelos sete primeiros numeros da hash ou ele todo, podemos usar no reverse
+
+ git checkout (6 digitos da Hash)
+
+ Este comando nos leva a um ponto sem nenhum branch, para voltar devo criar um branch para este ponto.
+ 
+ git checkout (6 digitos da Hash) -b nomeBranchNova
+ 
+ A descrição do comando git checkout --help, em uma tradução livre é: "Atualizar os arquivos na working tree para ficarem na versão especificada. [...]". Basicamente, podemos deixar o nosso código no estado do último commit de uma branch, de um commit específico, ou mesmo tags (que veremos adiante).
+ 
+ Resumo
+ 
+Desfazer algo sem add = git checkout -- index.html
+
+Desfazer algo com add = 
+git reset HEAD index.html
+git checkout -- index.html
+
+Desfazer algo após o commit = 
+executamos um : git log --oneline
+copiamos o numero hash : Ex: d50ebda
+voltamos: git revert d50ebda
+atribuimos um comentario para este revert.
+
+Criando um ponto temporários
+fazemos a alteração e aplicamos um : git stash
+git stash pop - Volta as alterações realizadas mesmo que tenha feito outras depois
+
+Obs: Sempre nosso master será o principal o de controle, para desenvolver usamos outras branches 
+
+Enviar uma atualização ao servidor
+git push servidorGit master
+
+Receber uma atualização do servidor
+git pull servidorGit master
+
+Voltar a um ponto antes commitado - este comando não afeta o master, pois cria um ponto sem branche, permitindo consultar
+git checkout Hash
+
+Que, para desfazer uma alteração antes de adicioná-la para commit (com git add), podemos utilizar o comando git checkout -- <arquivos>;
+Que, para desfazer uma alteração após adicioná-la para commit', antes precisamos executar ogit reset HEAD e depois podemos desfazê-las comgit checkout -- `;
+Que, para revertermos as alterações realizadas em um commit, o comando git revert pode ser a solução;
+Que o comando git revert gera um novo commit informando que alterações foram desfeitas;
+Que, para guardar um trabalho para retomá-lo posteriormente, podemos utilizar o git stash;
+Que, para visualizar quais alterações estão na stash, podemos utilizar o comando git stash list;
+Que, com o comando git stash apply <numero>, podemos aplicar uma alteração específica da stash;
+Que o comando git stash drop <numero> remove determinado item da stash;
+Que o comando git stash pop aplica e remove a última alteração que foi adicionada na stash;
+Que o git checkout serve para deixar a cópia do código da nossa aplicação no estado que desejarmos:
+git checkout <branch> deixa o código no estado de uma branch com o nome <branch>;
+git checkout <hash> deixa o código no estado do commit com o hash <hash>.
+
+
+Validando meu projeto para entrega.
+
+git log -p = me mostra todas as mudanças, porém quero compará-los.
+
+para isso usamos o git diff 
+Este serve para ver a diferença do que ainda não foi adicionado Commitado, ou seja antes do add.
+
+Ele vai mostrar tudo o que mudou até aquele ponto.
+
+Ou podemos fazer um comparativo usando o hash de dois pontos de um commit, ou seja pego duas referências e aplico.
+
+Ececutar comando:
+git log --oneline ou git log -p
+
+Comando para comparar dois pontos de Commit da nossa aplicação:
+Colocar o ponto mais novo em primeiro:
+git diff d4a6a1a..99e1e85
+git diff {hash do commit de merge com lista}..{hash do último commit realizado};
+
+O sinal de subtração (-) antes da linha indica que ela não está mais presente no arquivo. Já o sinal de adição (+) mostra que é uma linha nova. Alterações são representadas por uma remoção e uma adição de linha.
+
+Que, digitando apenas git diff, vemos as alterações em nossos arquivos que não foram adicionadas para commit (com git add);
+Que é possível comparar as alterações entre duas branches com git diff <branch1>..<branch2>
+Que é possível comparar as alterações feitas entre um commit e outro, através do comando git diff <commit1>..<commit2>;
+
+
+Tags e Releases
+Pegamos um hash através do Log, copio este Hash e vamos adicionar uma Tag - Marcando um ponto onde não pode ser modificado, como um lançamento de uma versão, define um ponto definitivo, dando certeza de um estado pronto.
+
+Adicionando uma tag
+git tag -a nome Ex: v.0.1.0 -m "Lançando a primeira versão do sistema"
+
+Comando:
+git tag -a v0.1.0 -m  "Lançando a primeira versão do sistema"
+
+Fechando nossa versão em nosso servidor.Este comando criará um release em nosso GitHub (Aba).
+
+Comando:
+git push servidorGit v0.1.0
+
+Usando esta o GitHub nos dá a possibilidade de baixar um arquivo compactado contendo o código no estado em que a tag foi gerada.
+
+O Git nos possibilita salvar marcos da nossa aplicação, como por exemplo, lançamento de versões, através do git tag;
+Que o comando git tag -a é utilizado para gerar uma nova tag;
+As Releases do GitHub, que são geradas para cada tag do Git criada em nosso repositório.
+
+RESUMO CURSO
+
+- Inicializando um repositório: git init (dentro da pasta)
+- Verificar quais alterações foram realizadas : git status (informa os arquivos que devem der adicionados)
+- adicionar um arquivo antes do commit : git add nome_do_arquivo.tipo ou git add .
+- gerar commit (ponto de alteração - nunca comitar algo com erro ) : git commit -m "Mensagem a ser exibita para identificação"
+- gerar log dos nossos commits : git log -p (detalhado), git log ou git log --oneline (exibe tudo que foi commitado - Histórioco)
+- Navegar entre pontos ou Branches: git checkout hash ou nome da Branche
+- Comandos para desfazer algo: git checkout -- nomeArquivo.extensão (usado antes de adicionar), git reset HEAD index.html --> git checkout -- index.html (usado após adicionar antes do commit) e o git revert Hash (Este é usado após um commit)
+- Adicionando um servidor:  git remote add GitHub-git https://github.com/diegomaxdev/alura-git.git ou  git remote add nome CaminhoDaPasta (Esta deve conter a pasta .git - Git Init)
+- Enviar dados: git push nomeServidor nomeBranche - git push servidorLocal master (Empurra)
+- Receber dados: git pull nomeServidor nomeBranche - git pull servidorLocal master (Receber)
+- Configurando nosso usuário para identificação git config --global user.email (user.name) "you@example.com"
+- Ignorando arquivos de configuração - .gitignore (neste devemos adicionar todos os arquivos que não serão sincronizados, apenas nome) 
+- Criando uma pasta para ser o servidor Local usamos: git init --bare (onde só irá receber, nunca editar)
+- Criando uma Branch e navegando para esta : git checkout -b nome (Branch são posições onde podemos realizar nossas alterações sem afetar nossa master (principal))
+- sincronizar Branch usamos: git merge nomeBranch (gera um novo commit) ou git rebase nomeBranch (não gera um commit de merge);
+- Comando para salvar algo temporário: git stash - Salva nosso ponto atual e volta ao padrão antes da mudança
+- Comando para voltar meu ponto temporário: git stash pop - Faz as alterações anteriores e já remove da lista de stash
+- Voltar a um ponto antes commitado - este comando não afeta o master, pois cria um ponto sem branche: git checkout Hash
+- Ver a diferença do que ainda não foi adicionado Commitado : git diff
+- Comando para comparar dois pontos de Commit da nossa aplicação: git diff d4a6a1a..99e1e85 (Dois Hash separados por ..)
+- Criar uma tag para identificação (ponto): git tag -a v0.1.0 -m  "Lançando a primeira versão do sistema"
+- Gravar no Git Hub a versão Final (lançar de uma versão, define um ponto definitivo): git push servidorGit v0.1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
