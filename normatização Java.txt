@@ -1,0 +1,14 @@
+Algoritimos devem ser lidos por seres humanos
+Escreva Comentários quando estiver escrevendo o algoritimo
+Comentários deverão acrescentar alguma coisa
+Fazer comentários Prologos - Antes do Código devemos colocar Autor / Data / Para que serve / 
+Use espaço em branco para deixar legível
+Escolha nomes representativos para variaveis.
+Um comando por linha sempre
+Utilize parenteses para dar legibilidade e prevenir-se contra erros.
+Utilize identação deste o inicio.
+Toda vez que for feita uma modificação no algoritimo os comentários devem ser atualizados.
+Importar pacote de um a um não usar *
+
+
+

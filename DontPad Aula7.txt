@@ -1,0 +1,320 @@
+http://dontpad.com/fj21-web8462
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ReferênciasJDBC
+
+Atalhos para o eclipse
+
+https://dzone.com/articles/effective-eclipse-shortcut-key
+
+Lista de comandos MySQL
+
+https://gist.github.com/hofmannsven/9164408
+
+Link para o pdf da apostila
+- https://www.dropbox.com/s/o3yvbhfrr0zc0gg/apostila-FJ-21-FV23.2.9-aluno-09052019.pdf?dl=0
+
+Participe da nossa pesquisa interna, queremos saber qual sua real necessidade aqui!
+http://bit.ly/por-que-voce-esta-na-caelum
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 1 - 29/07/19
+
+1. Criando tabela contato:
+
+create table contatos (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    nome VARCHAR(255),
+    email VARCHAR(255),
+    endereco VARCHAR(255),
+    dataNascimento DATE,
+    primary key (id)
+);
+
+
+2. Spec do JDBC versão 4.1
+https://download.oracle.com/otn-pub/jcp/jdbc-4_1-mrel-spec/jdbc4.1-fr-spec.pdf
+
+3. Como escrever sua própria implementação da Spec do JDBC
+https://www.javaworld.com/article/2074249/create-your-own-type-3-jdbc-driver--part-1.html
+
+4. MySQL Connector/J
+https://dev.mysql.com/doc/connector-j/5.1/en/connector-j-overview.html
+
+1. Java EE specs
+https://www.oracle.com/technetwork/java/javaee/tech/javaee6technologies-1955512.html
+
+2. Software Specification (wikipedia)
+https://en.wikipedia.org/wiki/Software_requirements_specification
+
+3. What is a Java Specification? (Quora)
+https://www.quora.com/What-is-a-Java-specification
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 2 - 30/07/19
+
+Conteudo adicional
+
+Pass By value vs Pass by Reference
+https://stackoverflow.com/questions/40480/is-java-pass-by-reference-or-pass-by-value
+https://www.journaldev.com/3884/java-is-pass-by-value-and-not-pass-by-reference
+https://www.javaworld.com/article/2077424/learn-java-does-java-pass-by-reference-or-pass-by-value.html
+
+Heap e Stack Memory
+https://www.journaldev.com/4098/java-heap-space-vs-stack-memory
+
+Super keyword
+https://www.quora.com/Why-must-super-be-the-first-statement-in-a-constructor
+https://docs.oracle.com/javase/tutorial/java/IandI/super.html
+
+Para casa
+
+Apostila
+
+- 2.15 (Exercícios Opcionais)
+- 2.16 (Leitura) 
+- 2.17 (Exercícios Opcionais)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 3 - 31/07/19
+
+1. Java EE specs
+https://www.oracle.com/technetwork/java/javaee/tech/javaee6technologies-1955512.html
+
+2. Software Specification (wikipedia)
+https://en.wikipedia.org/wiki/Software_requirements_specification
+
+3. What is a Java Specification? (Quora)
+https://www.quora.com/What-is-a-Java-specification
+
+4. Link para o dao-modelo.zip
+https://drive.google.com/open?id=0B0qR-YC8wtA2ZFNLcXJERl8tOXc
+
+5. Mapeamento da Servlet (colar no WebContent/WEB-INF/web.xml abaixo do welcome-file-list)
+
+<servlet>
+	<servlet-name>HoraServidor</servlet-name>
+	<servlet-class>br.com.caelum.servlet.HoraServidorServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>HoraServidor</servlet-name>
+	<url-pattern>/horaServidor</url-pattern>
+</servlet-mapping>
+
+6. Hora Servidor
+https://gist.github.com/fllsouto/10dc96959869c9d23b6ed56fcf751a49
+
+Bônus 
+
+1. Getting start with Postman
+https://www.youtube.com/watch?v=q78_AJBGrVw&ab_channel=ArachneTutorials
+
+2. Chrome DevTools tutorial
+https://developers.google.com/web/tools/chrome-devtools/?hl=pt-br
+
+Ideias de projetos
+https://www.freecodecamp.org/news/6-absurd-ideas-for-building-your-first-web-application-24afca35e519/
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 4 - 01/08/19
+
+0. Link para o dao-modelo.zip
+https://drive.google.com/open?id=0B0qR-YC8wtA2ZFNLcXJERl8tOXc
+
+1. Diagrama de um mapeamento de Servlet
+https://www.ntu.edu.sg/home/ehchua/programming/java/images/Servlet_HelloServletURL.png
+
+2. Métodos Http
+https://cdn-images-1.medium.com/max/1600/1*xJEUm1hUvxppvcjY14IKQA.jpeg
+
+3. Exemplo de uma requisição para o endereço: https://en.wikipedia.org/wiki/Java_servlet
+
+##############
+
+GET /wiki/Java_servlet HTTP/1.1
+Host: en.wikipedia.org
+User-Agent: PostmanRuntime/7.13.0
+Accept: */*
+Cache-Control: no-cache
+Postman-Token: fefbf1f7-8299-468a-8086-f6a5204502f9,7a33a00b-1ec5-4b60-92de-9c993cd3bed7
+Host: en.wikipedia.org
+accept-encoding: gzip, deflate
+Connection: keep-alive
+cache-control: no-cache
+
+##############
+
+4. Exemplo de uma resposta:
+http://crimsonsecurity.blogspot.com/2016/08/format-of-http-response.html
+https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/images/HTTP_ResponseMessageExample.png
+
+5. JSP Spec
+https://jcp.org/aboutJava/communityprocess/mrel/jsr245/index.html
+
+7. Formatando data
+https://gist.github.com/fllsouto/2e1fee24bd5502dcca4b58fb87dfef2e
+
+Apostila
+
+- 5.8 (Para saber mais)
+- 5.13 (Leitura) 
+- 5.14 (Exercício)
+- 5.17 (Exercícios Opcionais)
+- 6.7 (Exercício)
+
+Bonus
+
+locastyle
+https://opensource.locaweb.com.br/locawebstyle/documentacao/componentes/tabelas/
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 5 - 02/08/19
+
+1. JSTL Spec
+https://jcp.org/aboutJava/communityprocess/maintenance/jsr052/index3.html
+
+2. O que é um pojo?
+https://pt.stackoverflow.com/questions/22607/qual-a-diferen%C3%A7a-entre-javabean-e-pojo
+
+3. Adiciona contatos
+https://codepen.io/fllsouto/pen/EBWLgV
+
+4. Adiciona contatos com label nos inputs
+https://gist.github.com/fllsouto/4ef19932c183c646fd688b52f696f8b9
+
+5. Jquery
+https://jquery.com/
+
+6. Jquery Examples
+https://www.w3schools.com/jquery/jquery_examples.asp
+
+7. Browser events
+https://developer.mozilla.org/en-US/docs/Web/Events
+
+8. Estrutura do Switch case
+https://gist.github.com/marioluan/3982142
+https://www.w3schools.com/java/java_switch.asp
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 6 - 05/08/19
+
+
+Arquitetura de servlets v1
+https://gist.github.com/fllsouto/6b6a2f04c821574c2728faf942b9b147
+
+Refatoração I
+https://gist.github.com/fllsouto/8fe417f176a82a79bca9466d7d78ee0f
+
+Refatoração II
+https://gist.github.com/fllsouto/ff7bd6ac5cdf43c3fde2d0fc6e6f5483
+
+Refatoração III
+https://gist.github.com/fllsouto/93fef9e69fe50b114992b0a46191636f
+
+Bonus
+
+Diagrama MVC
+- https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-mvc-intro/images/high-level.png
+
+O que é MVC?
+- https://tableless.com.br/mvc-afinal-e-o-que/
+
+Podcasts Microserviços
+https://www.lambda3.com.br/2019/02/lambda3-podcast-128-microsservicos/
+https://www.lambda3.com.br/2019/03/lambda3-podcast-132-microsservicos-2/
+https://hipsters.tech/microsservicos-na-caelum-hipsters-on-the-road-6/
+https://hipsters.tech/microsservicos-autonomos-na-usabilla-hipsters-on-the-road-10/
+https://hipsters.tech/microsservicos-na-monkey-exchange-hipsters-on-the-road-12/
+
+Domain Driven Design
+https://www.amazon.com.br/Domain-Driven-Design-Eric-Evans/dp/8550800651
+https://github.com/p0w34007/ebooks/blob/master/Eric%20Evans%202003%20-%20Domain-Driven%20Design%20-%20Tackling%20Complexity%20in%20the%20Heart%20of%20Software.pdf
+
+Para casa
+- 9.9 (Exercício)
+- 9.11 (Exercício Opcional)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Aula 7 - 06/08/19
+
+Spring Framework
+- https://spring.io/
+
+Spring Framework Documentation
+- https://docs.spring.io/spring/docs/current/spring-framework-reference/index.html
+
+Spring MVC - Quick Concepts with Example
+- https://www.logicbig.com/tutorials/spring-framework/spring-web-mvc/spring-mvc-intro.html
+
+Spring in Action
+- https://www.manning.com/books/spring-in-action-fifth-edition
+
+Bean Validation
+- https://beanvalidation.org/
+
+Hibernate Validator
+- http://hibernate.org/validator/
+
+Tutorial Bean Validation
+- https://www.baeldung.com/javax-validation
+
+Bonus
+
+Node.js in Flames
+https://medium.com/netflix-techblog/node-js-in-flames-ddd073803aa4
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Questões para exercitar o conteúdo
+
+1. O que é uma especificação de software?
+2. Qual a função do JDBC? Que tipo de problemas ele pode nos ajudar a resolver?
+3. Qual a função do DAO? Que tipos de facilidades ele nos proporciona?
+4. Qual o papel do Tomcat no sistema que estamos construindo?
+5. Qual a função do web.xml?
+6. O que é um Servlet? Qual a utilidade dele?
+7. Quais os três elementos mais importantes de um Servlet?
+8. Descreva brevemente o ciclo de vida de um Servlet?
+9. Como funciona a execução de uma Servlet dentro do Tomcat?
+10. O que é uma JSP?  Em que tipo de situação é vantajoso utilizar essa tecnologia?
+11. Como o uso de JSP's pode contribuir b para trazer dinamismo para uma página web?
+12. O que é a JSTL? Que benefícios essa tecnologia pode nos trazer?
+
+
+Desafio
+1. Crie um método no DAO que busca um Contato por uma parte do nome dele e retorne uma lista de possibilidades. Dica: Procure pelo operador 'like'
+2. Crie um método no DAO que busca um Contato dado um trecho qualquer de texto e retorne uma lista de possibilidades. Não esqueça de garantir que a busca irá utilizar qualquer uma das colunas que podem armazenar texto (nome, email, endereço)
+3. Crie uma pasta dentro de WebContent com o nome de resources. Coloque algumas imagens dentro dessa pasta, e tente acessar as imagens através do Browser. 
+Você consegue explicar o fluxo que está acontecendo?
+4. Crie uma página html customizada para o erro 404, e coloque  a imagem "https://httpstatusdogs.com/img/404.jpg" dentro de uma tag img. Tente exibir essa página de erro customizada.
+5. Crie um novo método no seu ContatoDAO que procura os contatos baseado em um trecho do nome deles. Dica: Veja como fazer esse tipo de query  no link do começo desse arquivo (gist).
+6. Crie uma página em que você pode buscar contatos por nomes, e o retorno é uma listagem de contatos que foram encontrados
+7. Adicione estilos CSS nas páginas de adição e listagem de contatos.
+
+
+
+Link para avaliação diária da aula
+http://bit.ly/fd-web8462
+
+
+Email da galera:
+fellipe.souto@caelum.com.br
+ro.monteirom@gmail.com
+brunaandako@gmail.com
+will.rc@live.com
+renan.palermo@hotmail.com
+nathan.ar.94@gmail.com
+oquealan@gmail.com
+leandroibraimads@gmail.com
+diego.maxdev@gmail.com
+
+
+　　　　　/)─―ヘ
+　　　＿／　　　　＼
+　 ／　　　　●　　　●丶
+　｜　　　　　　　▼　| 
+　｜　　　　　　　亠ノ
+　 U￣U￣￣￣￣U￣U
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

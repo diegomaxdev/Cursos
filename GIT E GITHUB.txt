@@ -1,0 +1,110 @@
+Controle de versão 
+
+- finalidade de gerenciar diferentes versões de um documento, permitindo avançar ou voltar para versões.
+
+Sistemas de Versionamento
+GIT , SVM, E ETC
+
+Programas diferentes do GIT pegam apenas as mudanças e ao Avançar e voltar eles trazem as diferenças ou removem estas, só trabalham apenas com as mudanças.
+
+No GIT - ele tira fotos, não muda mas leva todos os arquivos daquele momento. Facilitando o avança e retroagir o projeto. Ou seja caro queira voltar, ele tem um estado anterior para buscar.
+
+melhorias sofridas : 
+velocidade, avalia apenas o estado
+design mais simples, mais facilidade no uso
+suporte mais robusto
+totalmente distribuido
+consegue lidar com grandes projetos.
+
+GitHub - Serviço de web compartilhado, para projetos que utilizam o GIT
+
+GIT - SISTEMA DE CONTROLE DE VERSÃO
+GITHUB - SISTEMA DE HOSPEDAGEM PARA AS VERSÔES DO GIT (REDE SOCIAL PARA DISPONIBILZAR SEU CÒDIGO - REPOSITORIO REMOTO).
+
+GIT - Guarda suas informações em três lugares.
+Git config so sistem
+Git config do usuario - Global 
+Git config do projeto
+
+
+COMANDOS
+
+CRIAR UM USUARIO
+$ git config --global user.nome "Diego Andrade"
+
+VINCULANDO UM E_MAIL
+$ git config --global user.mail "diego.maxdev@gmail.com"
+
+COLOCANDO UM EDITOR COMO PRINCIPAL
+$ git config --global core.editor "'C:\Users\Diego\AppData\Local\Programs\Microsoft VS Code\Code.exe' -w"
+
+VISUALIZANDO CONFIGURAÇÕES
+$ git config user.name
+$ git config user.email
+$ git config --list
+core.symlinks=false
+core.autocrlf=true
+core.fscache=true
+color.diff=auto
+color.status=auto
+color.branch=auto
+color.interactive=true
+help.format=html
+rebase.autosquash=true
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+http.sslbackend=openssl
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+credential.helper=manager
+user.nome=Diego Andrade
+user.mail=diego.maxdev@gmail.com
+cor.editor=diego.maxdev@gmail.com
+core.editor='C:\Users\Diego\AppData\Local\Programs\Microsoft VS Code\Code.exe' -w
+
+CRIANDO UMA PASTA
+$ mkdir git-course
+
+ACESSANDO A PASTA
+$ cd git-course/
+
+INICIANDO MEU PROJETO
+$ git init
+Initialized empty Git repository in C:/Users/Diego/git-course/.git/
+
+ÇISTANDO ARQUIVOS DA MINHA PASTA
+$ ls -la
+total 28
+drwxr-xr-x 1 Diego 197121 0 jul 26 14:29 ./
+drwxr-xr-x 1 Diego 197121 0 jul 26 14:26 ../
+drwxr-xr-x 1 Diego 197121 0 jul 26 14:29 .git/
+
+ACESSANDO A PASTA .GIT
+$ cd .git/
+
+LISTANDO ARQUIVOS DESTA
+$ ls
+config  description  HEAD  hooks/  info/  objects/  refs/
+
+VOLTANDO UMA PASTA
+$ cd ..
+
+CICLO DE VIDA DOS ARQUIVOS
+
+UNTRACKED - NÂO MARCADO - MOMENTO EM QUE O ARQUIVO ACABOI DE SER ADICIONADO, MAS AINDA NÂO FOI VISTO PELO GIT EM NENHUMA VERSÂO.
+
+UNMODIFIED - NÂO FOI MODIFICADO< FASE ONDE ELE È SÒ RECONHECIDO, OU SEJA ELE COMEÇOU A ENXERGAR O ARQUIVO.
+
+MODIFIED - APÓS SOFRE UMA ALTERAÇÃO E ESTE JÀ È RECONHECIDO PELO GIT
+
+STAGED - AREA ONDE È CRIADO UMA VERSÂO< ONDE O ARQUIVO FICARÀ PARA FECHAR A VERSÂO. OU SEJA ASSIM QUE FIZER O COMMIT TODOS OS ARQUIVOS VOLTAM A SER UNMODIFIED.
+
+
+
+
+
+
+
+
